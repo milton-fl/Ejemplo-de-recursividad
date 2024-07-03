@@ -1,0 +1,26 @@
+Ejemplo de Recursividad: Búsqueda Binaria
+* La búsqueda binaria es un algoritmo eficiente para encontrar un elemento en una lista ordenada. 
+* Utiliza la técnica de "divide y vencerás" para reducir el rango de búsqueda a la mitad en cada paso. 
+* La recursividad es una forma natural de implementar este algoritmo.
+      
+Descripción del Algoritmo
+1. Compara el elemento de búsqueda con el elemento en el medio de la lista.
+2. Si el elemento de búsqueda es igual al elemento del medio, se ha encontrado el elemento.
+3. Si el elemento de búsqueda es menor que el elemento del medio, realiza una búsqueda recursiva en la mitad inferior de la lista.
+4. Si el elemento de búsqueda es mayor que el elemento del medio, realiza una búsqueda recursiva en la mitad superior de la lista.
+5. Si el rango de búsqueda es inválido (inicio > fin), el elemento no se encuentra en la lista.
+
+Explicación en MATLAB:
+1. Definición de la Función:
+o La función busqueda_binaria se define con los parámetros lista, elemento, inicio, y fin.
+2. Caso Base: Rango de Búsqueda Inválido:
+o Si el índice de inicio es mayor que el índice de fin, el elemento no se encuentra en la lista: if inicio > fin, indice = -1; return;
+3. Calcular el Punto Medio:
+o El punto medio se calcula como el índice promedio de inicio y fin: medio = floor((inicio + fin) / 2);
+4. Caso Base: Elemento Encontrado:
+o Si el elemento en el punto medio es igual al elemento buscado, se retorna el índice del punto medio: if lista(medio) == elemento, indice = medio; return;
+5. Caso Recursivo: Búsqueda en la Mitad Inferior:
+o Si el elemento en el punto medio es mayor que el elemento buscado, se realiza una búsqueda recursiva en la mitad inferior de la lista: elseif lista(medio) > elemento, indice = busqueda_binaria(lista, elemento, inicio, medio - 1);
+6. Caso Recursivo: Búsqueda en la Mitad Superior:
+o Si el elemento en el punto medio es menor que el elemento buscado, se realiza una búsqueda recursiva en la mitad superior de la lista: else, indice = busqueda_binaria(lista, elemento, medio + 1, fin);
+

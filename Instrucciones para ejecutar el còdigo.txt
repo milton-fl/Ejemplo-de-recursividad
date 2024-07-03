@@ -1,0 +1,8 @@
+Instrucciones para ejecutar el còdigo:
+
+Para ejecutar el código desde el Command Window en MATLAB, primero guarda la función `busqueda_binaria` 
+en un archivo llamado `busqueda_binaria.m`. Luego, en el Command Window, define la lista ordenada y el
+elemento a buscar, y llama a la función `busqueda_binaria` con los parámetros adecuados. Por ejemplo, 
+crea la lista `lista_ordenada = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` y el elemento `elemento_a_buscar = 7`, 
+luego ejecuta `resultado = busqueda_binaria(lista_ordenada, elemento_a_buscar, 1, length(lista_ordenada))`. 
+Finalmente, usa `fprintf` para mostrar el resultado
